@@ -1,0 +1,15 @@
+<h1> now what </h1>
+<h2>LOGIN</h2>
+<%= render "login_form" %>
+
+
+<h2>REGISTER</h2>
+<%= form_for @user do |f| %>
+	<%= f.text_field :name,  placeholder: "Name" %>
+  <%= f.text_field :email, placeholder: "Email" %>
+  <%= f.password_field :password, placeholder: "Password" %>
+<%= f.submit %>
+
+<% end %>
+ 
+
