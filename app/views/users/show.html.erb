@@ -5,12 +5,13 @@
 
   <h1>Hello<%= @user.name %>!</h1>
   <h3>Welcome to your profile page :)</h3>
-
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">your tips</a></p>
+  <%= image_tag @user.photo.url(:medium) %>
 
 <%= link_to "Edit", edit_user_path %>
 
-<div class="row">
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">your tips</a></p>
+
+<!-- <div class="row">
   <div class="col-md-4">
     <div class="thumbnail">
       <img src="..." alt="...">
@@ -43,7 +44,8 @@
       </div>
     </div>
   </div>
-</div>
+  
+</div> -->
 
 
 </div>

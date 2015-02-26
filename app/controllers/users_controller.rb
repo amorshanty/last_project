@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 			session[:current_user_id] = @user.id
 			redirect_to user_path(@user)
 		else
-			render "new"
+			redirect_to '/'
 		end
 	end
 
@@ -31,14 +31,14 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update_attributes user_params
-			redirect_to action: 'show'
+			redirect_to user_path(@user)
 		else
-			render 'new'
+			redirect_to '/'
 		end		
 	end
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password)
+		params.require(:user).permit(:name, :email, :password, :photo)
 	end
 
 end

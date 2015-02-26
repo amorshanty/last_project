@@ -12,9 +12,7 @@
 		<header class="header">
 			<div class="container">
 
-
 				<div class="cat">
-					
 					<div class="row">
 						<div class="col-sm-8">
 							<h1 class= "titulo">N.W?</h1>		
@@ -23,25 +21,20 @@
 						<!-- BOTONERA -->
 
 						<div class="col-sm-4 botonera">
-						<%= link_to "Home", root_path, class: "btn bt-link b_header" %>
+							<%= link_to "Home", root_path, class: "btn bt-link b_header" %>
+							<button type="button" class="btn btn-link b_header">About</button>
+							<%= link_to "Categories", categories_path, class: "btn bt-link b_header" %>
 
-						<button type="button" class="btn btn-link b_header">About</button>
-
-						<%= link_to "Categories", categories_path, class: "btn bt-link b_header" %>
-						<%if current_user%>
-
-						  <button type="button" class="btn btn-default dropdown-toggle b_login2" data-toggle="dropdown" aria-expanded="false">
-						    <%= link_to current_user.name, user_path(current_user)%> <span class="caret"></span>
-						  </button>
-						  <ul class="dropdown-menu" role="menu">
-						    <li> <%= render "users/logout_form" %> </li>
-						    <li class="divider"></li>
-						    <li><a href="#">Separated link</a></li>
-						  </ul>
+							<%if current_user%>
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							  <%= current_user.name %> <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu">
+							    <li> <%= link_to user_path(current_user)%> </li>
+							    <li class="divider"> </li>
+							    <li> <a href="#"> <%= render "users/logout_form" %> </a> </li>
+							  </ul>
 						</div>
-
-						<!-- 	<%= link_to current_user.name, user_path(current_user), class: "btn btn-success b_login2" %> -->
-
 						 
 						 <%else%>
 								<button type="button" class="btn btn-success b_login" id="myLogin" >login</button>
@@ -54,14 +47,14 @@
 					</div>
 				</div>
 		</header>
-<!-- HEADER -->
+	<!-- HEADER -->
 
 		  
 
 
 	<%= yield %>
 
-<!-- //FOOTER  -->	
+	<!-- //FOOTER  -->	
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
@@ -71,7 +64,7 @@
 			</div>
 		</div>
 	</footer>
-</div>
-<!-- //FOOTER -->
+	</div>
+	<!-- //FOOTER -->
 	</body>
 </html>
