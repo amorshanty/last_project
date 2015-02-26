@@ -25,3 +25,13 @@ Category.create(
 	name: "categoria4" ,
 	summary: "descripcion de categoria4"
 	)
+
+Category.create(
+	name: "categoria5" ,
+	summary: "descripcion de categoria5"
+	)
+
+Category.create(
+	name: "categoria6" ,
+	summary: "descripcion de categoria6"
+	)

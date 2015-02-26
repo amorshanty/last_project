@@ -1,0 +1,12 @@
+
+
+<h2>Open a new account! :) </h2>
+<%= form_for @user do |f| %>
+	<%= f.text_field :name,  placeholder: "Name" , class: "form-control f_register" , id: "exampleInputEmail1" %>
+  <%= f.text_field :email, placeholder: "Email" , class: "form-control f_register" , id: "exampleInputEmail1" %>
+  <%= f.password_field :password, placeholder: "Password" ,class: "form-control f_register" , id: "exampleInputEmail1" %>
+<%= f.submit("Register", class: "btn btn-success b_login b_login_1") %>
+
+
+<% end %>
+

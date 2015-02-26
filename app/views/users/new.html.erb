@@ -1,15 +1,70 @@
-<h1> now what </h1>
-<h2>LOGIN</h2>
-<%= render "login_form" %>
+<!-- //CONTAINER -->
+		<div class="container">
+			<div class="row c_register">
+				<div class="col-sm-7">
+					<h1>Un titulo aqui una cosa</h1>
+					<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quis </h3>
+					<h5>minima eos eum labore fugiat ipsam dolorem error rem inventore sint, delectus facere beatae architecto dolorumq, uia dolor praesentium consequuntur, delectus facere beatae architecto dolorumq, uia dolor praesentium consequuntur</h5> 
+				</div>
+				<div class="col-sm-1"></div>
+				<div class="col-sm-4">
+					<%= render "register_form" %>
+				</div>
+			</div>
+		</div>
+
+		<div class="row r_about">
+			<div class="container">
+					<h3>ABOUT</h3>
+					<p>lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quis minima eos eum labore fugiat ipsam dolorem error rem inventore sint, delectus facere</p>
+				<div class="row r_about_2">
+				</div>
+				<div class="col-sm-4 text-center">
+					<img src="/assets/grumpy.jpg" class="img-circle grumpy">
+				</div>
+				<div class="col-sm-4 text-center">
+					<img src="/assets/grumpy.jpg" class="img-circle grumpy">
+				</div>
+				<div class="col-sm-4 text-center">
+					<img src="/assets/grumpy.jpg" class="img-circle grumpy">
+				</div>
+			</div>
+		</div>
+
+			<div class="row r_cat">
+			<div class="container">
+					<h3>CATEGORIES</h3>
+				<div class="row r_about_2">
+				</div>
+				<div class="col-sm-9"> imagen aqui </div>
+				<div class="col-sm-3"> texto aqui</div>
+			</div>
+		</div>
+
+		<div class="row r_about">
+			<div class="container">
+					<h3>TIPS</h3>
+				<div class="row r_about_2">
+				</div>
+				<div class="col-sm-3"> texto aqui</div>
+				<div class="col-sm-9"> imagen aqui </div>
+			</div>
+		</div>
 
 
-<h2>REGISTER</h2>
-<%= form_for @user do |f| %>
-	<%= f.text_field :name,  placeholder: "Name" %>
-  <%= f.text_field :email, placeholder: "Email" %>
-  <%= f.password_field :password, placeholder: "Password" %>
-<%= f.submit %>
+<!-- //CONTAINER -->
 
-<% end %>
- 
-
+<!-- //MODAL -->
+		<div class="modal" id="my_modal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title">Hi! welcome back :) </h4>
+		      </div>
+		      <div class="modal-body"> 
+		        <%= render "login_form" %> 
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+<!-- //MODAL  -->

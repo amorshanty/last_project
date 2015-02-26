@@ -9,10 +9,10 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
+		@user_id = session[:current_user_id]
 		@category = Category.find params[:id]
+		@tip = @category.tips.build
+		@tips = @category.tips
 	end
-
-	# @category.each do category
-	# 	link to value, category_path
 
 end

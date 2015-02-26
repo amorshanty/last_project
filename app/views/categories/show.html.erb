@@ -1,0 +1,12 @@
+<h1>
+ <%= @category.name %>
+</h1>
+
+<ul>
+	<% @tips.each do |tip| %>
+		<li><%= tip.description %></li>
+	<% end %>
+</ul>
+
+
+<%= render "tips/form" %>

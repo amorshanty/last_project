@@ -6,9 +6,72 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<!-- HEADER  -->
+	<body>
+		<header class="header">
+			<div class="container">
 
-</body>
+
+				<div class="cat">
+					
+					<div class="row">
+						<div class="col-sm-8">
+							<h1 class= "titulo">N.W?</h1>		
+						</div>		
+
+						<!-- BOTONERA -->
+
+						<div class="col-sm-4 botonera">
+						<%= link_to "Home", root_path, class: "btn bt-link b_header" %>
+
+						<button type="button" class="btn btn-link b_header">About</button>
+
+						<%= link_to "Categories", categories_path, class: "btn bt-link b_header" %>
+						<%if current_user%>
+
+						  <button type="button" class="btn btn-default dropdown-toggle b_login2" data-toggle="dropdown" aria-expanded="false">
+						    <%= link_to current_user.name, user_path(current_user)%> <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li> <%= render "users/logout_form" %> </li>
+						    <li class="divider"></li>
+						    <li><a href="#">Separated link</a></li>
+						  </ul>
+						</div>
+
+						<!-- 	<%= link_to current_user.name, user_path(current_user), class: "btn btn-success b_login2" %> -->
+
+						 
+						 <%else%>
+								<button type="button" class="btn btn-success b_login" id="myLogin" >login</button>
+						 <% end -%>
+
+						 <!-- //BOTONERA -->
+						
+						</div>
+						</div>	
+					</div>
+				</div>
+		</header>
+<!-- HEADER -->
+
+		  
+
+
+	<%= yield %>
+
+<!-- //FOOTER  -->	
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h6>footer</h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+<!-- //FOOTER -->
+	</body>
 </html>

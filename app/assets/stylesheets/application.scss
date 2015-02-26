@@ -1,16 +1,83 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- */
-
- 
+*= require_tree .
+*/ 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.header {
+	height: 70px;
+	width: 100%;
+	background-color: #1A1A1A;
+	color: white;
+	/*position: fixed;*/
+}
+
+.b_header {
+	color: white;
+}
+
+.b_header:hover, .b_header:focus {
+	color: gray;
+}
+
+.b_login {
+	width: 75px;
+}
+
+.titulo {
+ margin-top: 15px;
+}
+
+.botonera {
+	margin-top: 15px;
+	float: right;
+	margin-right: 0;
+}
+
+
+.f_register {
+	width: 300px;
+	margin-top: 10px;
+}
+
+.b_login_1{
+	margin-top: 15px;
+	width: 300px;
+}
+
+.c_register{
+	margin-top: 100px;
+	height: 400px;
+}
+
+.r_about {
+	height: 400px;
+	background-color: #F9F9F9;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.r_about_2{
+	margin-top: 50px;
+}
+
+.r_cat {
+	height: 300px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.footer{
+	background-color: black;
+	height: 150px;
+	color: white;
+}
+
+.grumpy{
+	width: 200px;
+}
+
+.b_login2{
+	background-color: black;
+	border-color: white;
+}

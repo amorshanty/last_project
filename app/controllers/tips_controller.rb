@@ -1,13 +1,14 @@
 class TipsController < ApplicationController
 	
 	def new
-		@tip = Tip.new
+	
 	end
 	
 	def create
-		@tip = Tip.new(user_params)
+		@category = Category.find(params[:category_id])
+		@tip = @category.tips.new(tip_params)
 		if @tip.save
-			redirect_to action: 'index'
+			redirect_to category_path(@tip.category.id)
 		else
 			render action: 'show'			
 		end
@@ -17,6 +18,14 @@ class TipsController < ApplicationController
 		@tip = Tip.find
 		@tip.destroy
 		redirect_to action: 'index'
+	end
+
+	def show
+		@tip = Tip.find(params[:id])
+	end
+
+	def tip_params
+		params.require(:tip).permit(:description, :user_id)		
 	end
 
 end
