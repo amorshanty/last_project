@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :users
   # resources :tips
   resources :categories do
-  	resources :tips
+  	resources :tips do 
+  		resources :ratings
+  	end
 	end
 
 end

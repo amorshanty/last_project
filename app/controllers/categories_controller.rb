@@ -9,9 +9,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
-		@user_id = session[:current_user_id]
-		@category = Category.find params[:id]
-		@tip = @category.tips.build
+		@category = Category.find(params[:id])
 		@tips = @category.tips
 	end
 

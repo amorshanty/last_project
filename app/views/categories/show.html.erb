@@ -1,12 +1,43 @@
-<h1>
- <%= @category.name %>
-</h1>
+<div class="category_style text-center">
+	<div class="container">
+			<div class="row id_name">
+				<h1> <%= @category.name %> </h1>
+			</div>
+	</div>
+</div>
 
-<ul>
-	<% @tips.each do |tip| %>
-		<li><%= tip.description %></li>
-	<% end %>
-</ul>
+<hr>
 
+<div class="container">
+	<div class="row">
+		<%= render "tips/form" %>
+	</div>
+	
+	<hr>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<% @category.tips.each do |tip| %>		
+				<div class="col-sm-3">
+					<p>
+						<%= tip.description %>
+					</p>
+				</div>
 
-<%= render "tips/form" %>
+				<div class="col-sm-2">
+		      <%= form_for [@category, tip, tip.ratings.new] do |f| %>
+		        <%= f.select(:value, [1,2,3,4,5]) %>
+		        <%= f.hidden_field(:user_id, value: current_user.id) %>
+		        <%= f.submit "RATE IT!!" %>
+		      <% end -%>
+				<h1>
+					<%= @tip_rating %>
+				</h1>
+				</div>
+
+			<% end %>
+		</div>
+	</div>
+
+	
+</div>

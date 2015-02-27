@@ -10,7 +10,7 @@ class TipsController < ApplicationController
 		if @tip.save
 			redirect_to category_path(@tip.category.id)
 		else
-			render action: 'show'			
+			redirect_to category_path(@category)
 		end
 	end
 

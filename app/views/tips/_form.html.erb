@@ -1,9 +1,15 @@
-<%= form_for [@category, @tip] do |f| %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
- 
-  <%= f.hidden_field :user_id, value: @user_id %>
 
-  <%= f.submit 'Save' %>
-  <% end %>
+<div class="col-lg-6 col-sm-offset-3">
+	<%= form_for [@category, Tip.new] do |f| %>
+ 		<div class="input-group">
+	  	<%= f.text_field :description , class: "form-control" %>
+	  	<%= f.hidden_field :user_id, value: current_user.id %>
+
+	    <span class="input-group-btn">
+	  	<%= f.submit 'Save' , class: "btn btn-default"%>
+	  	<% end %>
+	    </span>
+   </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+

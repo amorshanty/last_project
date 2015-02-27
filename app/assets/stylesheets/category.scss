@@ -13,3 +13,170 @@ height: 240px;
 border-radius: 0px;
 margin: 0px;
 }
+
+.category_style{
+	background-color: #E9668E;
+	height: 200px;
+	color: white;
+	padding-top: 60px;
+
+}
+
+.id_name{
+}
+
+// parallax -------------------
+
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+.container_1 {
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  margin-bottom: 40px;
+  font-family: "Roboto", serif;
+  font-size: 30px;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 600px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 48px;
+  line-height: 600px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+section.module.parallax-1 {
+  background-image: url("/assets/barcelona4.jpg");
+}
+section.module.parallax-2 {
+  background-image: url("/assets/barcelona2.jpg");
+}
+section.module.parallax-3 {
+  background-image: url("/assets/barcelona6.jpg");
+}
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 96px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
+}
+
+
+
+// parallax -----------------------
+
+.header {
+	height: 70px;
+	width: 100%;
+	background-color: #1A1A1A;
+	color: white;
+	/*position: fixed;*/
+}
+
+.b_header {
+	color: white;
+}
+
+.b_header:hover, .b_header:focus {
+	color: gray;
+}
+
+.b_login {
+	width: 75px;
+}
+
+.titulo {
+ margin-top: 15px;
+}
+
+.botonera {
+	margin-top: 15px;
+	float: right;
+	margin-right: 0;
+}
+
+
+.f_register {
+	width: 300px;
+	margin-top: 10px;
+}
+
+.b_login_1{
+	margin-top: 15px;
+	width: 300px;
+}
+
+.c_register{
+	margin-top: 100px;
+	height: 400px;
+}
+
+.r_about {
+	height: 400px;
+	background-color: #F9F9F9;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.r_about_2{
+	margin-top: 50px;
+}
+
+.r_cat {
+	height: 300px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.footer{
+	background-color: black;
+	height: 150px;
+	color: white;
+}
+
+.grumpy{
+	width: 200px;
+}
+
+.b_login2{
+	background-color: black;
+	border-color: white;
+}
