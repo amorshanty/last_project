@@ -1,9 +1,9 @@
 
 	
 <div class="container category_container">
-	<div class="cat_top">
+	<div class="row cat_top">
 		<% @categories.each do |category| %>
-			<div class="item item-type-move">
+			<div class="item item-type-move col-sm-3">
 				<a class="item-hover" href="<%= category_path(category.id) %>">
 					<div class="item-info">
 						<div class="headline">

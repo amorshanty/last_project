@@ -13,6 +13,10 @@ $txt-color-1: "white";
   color: white;
 }
 
+.centerwrap{
+  display: table;
+  margin:0 auto; outline: 1px solid red;
+}
 .blue{
   color: #22C9DB;
 }
@@ -271,7 +275,9 @@ padding-top: 25px;
 .r_about_2{
 	margin-top: 10px;
 }
-
+.cat_top{
+  width:100%;
+}
 .r_cat {
 	// height: 300px;
 	margin-top: 50px;
