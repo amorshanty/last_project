@@ -1,33 +1,43 @@
-<div class="container">
+<div class="container edit_user_container">
 	<div class="row">
-		<h1> Edit your profile </h1>
-	</div>
-	
+		<h1>  Edit your profile </h1> <br><br>
+	</div>		
+				
+	<%= form_for @user, :html => { :multipart => true } do |f| %>
 
-			
-			
-<%= form_for @user, :html => { :multipart => true } do |f| %>
-  <div class="form-group">
-    <label for="exampleInputName">Name</label>
-		<%= f.text_field :name,  placeholder: "Name" , class: "form-control f_register" , id: "exampleInputEmail1"%>
-  </div>
+	  <span class="input input--minoru">
+			<%= f.text_field :name, class: "input__field input__field--yoko" , id: "input-16"  %>
+			  <label class="input__label input__label--yoko" for="user_name">
+				<span class="input__label-content input__label-content--yoko">name</span>
+				</label>
+		</span>
 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-		<%= f.text_field :email, placeholder: "Email" , class: "form-control f_register" , id: "exampleInputEmail1" %>
-	</div>
-	
-	<div class="form-group">				
-    <label for="exampleInputPassword1">Password</label>
-		<%= f.password_field :password, placeholder: "Password" ,class: "form-control f_register" , id: "exampleInputEmail1"%>
-	</div>
+	  <span class="input input--minoru">
+			<%= f.text_field :email, class: "input__field input__field--yoko" , id: "input-16" %>
+			  <label class="input__label input__label--yoko" for="user_name">
+				<span class="input__label-content input__label-content--yoko">email</span>
+				</label>
+		</span>
 
-  <div class="form-group">	
-    <label for="exampleInputFile">File input</label>
-		<%= f.file_field :photo %>
-	</div>
+		<br><br><br><br>
+		
+		<span class="input input--minoru">				
+			<%= f.password_field :password, class: "input__field input__field--yoko" , id: "input-16"%>
+				<label class="input__label input__label--yoko" for="user_name">
+				<span class="input__label-content input__label-content--yoko">pasword</span>
+				</label>
+		</span>
 
-		<%= f.submit("Update User", class: "btn btn-success b_login b_login_1") %>
-	</div>
+	  <span class="input input--minoru">	
+			<%= f.file_field :photo, class: "input__field input__field--yoko" , id: "input-16"%>
+				<label class="input__label input__label--yoko" for="user_name">
+				<span class="input__label-content input__label-content--yoko">Profile picture</span>
+				</label>
+		</span>
+
+			<%= f.submit("Update User", class: "btn_1 btn-6 btn-6a btn-edit") %>
+			<%= link_to "Cancel", user_path, class: "btn_1 btn-6 btn-6a btn_edit_cancel" %> 
+
+</div>
 <% end %>
 

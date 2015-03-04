@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	
+ before_action :load_footer
+ 
 	def new
 	  @user = User.new
 	end
@@ -39,6 +40,12 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :photo)
+	end
+
+	private
+
+	def load_footer
+		@categories = Category.all
 	end
 
 end

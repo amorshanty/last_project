@@ -1,5 +1,6 @@
 class LoginController < ApplicationController
-
+  before_action :load_footer
+ 
 	def create
 		user = User.find_by(email: params[:email])
 	  if user && user.authenticate(params[:password])
@@ -22,5 +23,11 @@ class LoginController < ApplicationController
     session[:current_user_id] = nil
     redirect_to new_user_path
   end
+
+  private
+  
+    def load_footer
+      @categories = Category.all
+    end
 
 end

@@ -3,15 +3,80 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+$txt-color-1: "white";
 .category_li {
 	display: inline;
 }
 
+.blue-container{
+  background-color: #22C9DB;
+  color: white;
+}
+
+.blue{
+  color: #22C9DB;
+}
+
+.navbar-default {
+background-color: white !important;
+border-color: white;
+}
+
+.logo_class {
+width: 150px;
+padding-top: 6px;
+}
+.cl-effect-3 a {
+  padding: 8px 0;
+}
+
+body * {
+ font-family: 'Open Sans', sans-serif; 
+}
+
+.cl-effect-3 a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #22C9DB;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+.cl-effect-3 a:hover::after,
+.cl-effect-3 a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+// a===================
+
 .btn_li{
-width: 240px;
-height: 240px;
-border-radius: 0px;
-margin: 0px;
+  width: 240px;
+  height: 240px;
+  border-radius: 0px;
+  margin: 0px;
+}
+
+.cmn-t-border {
+  padding: 20px 40px;
+  color: #fff;
+  background-color: #ff3296;
+  transition: box-shadow 0.2s;
+}
+.cmn-t-border:hover {
+  color: #fff;
+  box-shadow: inset 0 0 0 10px #98004a;
 }
 
 .category_style{
@@ -19,31 +84,41 @@ margin: 0px;
 	height: 200px;
 	color: white;
 	padding-top: 60px;
+  margin-bottom: 25px;
 
 }
 
-.id_name{
+body{
+  header{
+    a.logo_header{
+      color: $txt-color-1 !important;
+      font-size: 30px;
+    }
+    .botonera{
+      text-align: right;
+    }
+  }
 }
-
 // parallax -------------------
 
-/* ============================================================
-  PRIMARY STRUCTURE
-============================================================ */
+/* PRIMARY STRUCTURE ============================================ */
 .container_1 {
   max-width: 960px;
   margin: 0 auto;
 }
-/* ============================================================
-  SECTIONS
-============================================================ */
+
+.container_2 {
+  max-width: 400px;
+  margin: 0 auto;
+}
+/* SECTIONS ==================================================== */
 section.module:last-child {
   margin-bottom: 0;
 }
 section.module h2 {
   margin-bottom: 40px;
   font-family: "Roboto", serif;
-  font-size: 30px;
+  font-size: 20px;
 }
 section.module p {
   margin-bottom: 40px;
@@ -54,8 +129,9 @@ section.module p:last-child {
   margin-bottom: 0;
 }
 section.module.content {
-  padding: 40px 0;
+  padding: 30px 0;
 }
+
 section.module.parallax {
   height: 600px;
   background-position: 50% 50%;
@@ -64,8 +140,8 @@ section.module.parallax {
   background-size: cover;
 }
 section.module.parallax h1 {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 48px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
   line-height: 600px;
   font-weight: 700;
   text-align: center;
@@ -79,40 +155,51 @@ section.module.parallax-2 {
   background-image: url("/assets/barcelona2.jpg");
 }
 section.module.parallax-3 {
-  background-image: url("/assets/barcelona6.jpg");
+  background-image: url("/assets/barcelona10.jpg");
 }
 
 @media all and (min-width: 600px) {
   section.module h2 {
-    font-size: 42px;
+    font-size: 20px;
   }
   section.module p {
     font-size: 20px;
   }
   section.module.parallax h1 {
-    font-size: 96px;
+    font-size: 20px;
   }
 }
 @media all and (min-width: 960px) {
   section.module.parallax h1 {
-    font-size: 160px;
+    font-size: 120px;
   }
 }
 
-
-
 // parallax -----------------------
 
+
 .header {
-	height: 70px;
+	height: 54px;
 	width: 100%;
-	background-color: #1A1A1A;
-	color: white;
-	/*position: fixed;*/
+  // background-color: rgba(0,0,0,.5);
+  position: fixed; top:0;
+  margin-top: 0px;
+  z-index: 150;
+	background-color: white;
+	color: gray;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.08);
+  border: 0px solid transparent;
 }
 
+
+
+// .fuckingnav{
+//   height: 70px;
+//   background-color: rgba(0,0,0,.5);
+// }
+
 .b_header {
-	color: white;
+	color: #b2b2b2;
 }
 
 .b_header:hover, .b_header:focus {
@@ -133,6 +220,13 @@ section.module.parallax-3 {
 	margin-right: 0;
 }
 
+.titulo_register{
+  margin-bottom: 22px;
+}
+
+.lead{
+  margin-bottom: 10px !important;
+}
 
 .f_register {
 	width: 300px;
@@ -140,36 +234,72 @@ section.module.parallax-3 {
 }
 
 .b_login_1{
-	margin-top: 15px;
-	width: 300px;
+	// margin-top: 15px;
+	width: 350px;
 }
 
-.c_register{
-	margin-top: 100px;
-	height: 400px;
+.c_register {
+margin-top: 100px;
+height: 350px;
+padding-top: 25px;
+// color: #b2b2b2;
+}
+
+.register_container{
+  // background-color: #fcfcfc;
+  height: 560px;
 }
 
 .r_about {
 	height: 400px;
-	background-color: #F9F9F9;
-	margin-top: 50px;
+  // width: 1164px;
+	// background-color: #F9F9F9;
+	margin-top: 20px;
 	text-align: center;
 }
 
+.about_2{
+  padding-top: 60px;
+}
+
+
+.r_about_3{
+  height: 400px;
+  padding: 50px;
+}
+
 .r_about_2{
-	margin-top: 50px;
+	margin-top: 10px;
 }
 
 .r_cat {
-	height: 300px;
+	// height: 300px;
 	margin-top: 50px;
 	text-align: center;
 }
 
 .footer{
-	background-color: black;
-	height: 150px;
-	color: white;
+	background-color: #22C9DB;
+	height: 100px;
+  width: 100%;
+	color: white !important;
+  padding-top: 35px;
+  margin:10px 0;
+  // bottom: 0px;
+  // position: absolute;
+}
+
+ul.list-inline{
+  li{
+    border-right: 1px solid white; 
+  }
+  li:last-child{
+    border-right:none;
+  }
+}
+.footer_color {
+  color: white !important;
+  text-decoration: none;
 }
 
 .grumpy{
@@ -180,3 +310,103 @@ section.module.parallax-3 {
 	background-color: black;
 	border-color: white;
 }
+
+.btn-success {
+color: #fff;
+background-color: #1aa1ad !important;
+border-color: #1aa5b2 !important;
+}
+
+
+.last {
+  background-color: #F1F1F1;
+  height: 140px;
+}
+
+
+// ============
+// ============
+// ============
+
+.btn_1 {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px 45px;
+  display: inline-block;
+  margin: 15px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn_1:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-6 {
+  color: #fff;
+  background: #22C9DB;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+
+.btn-6:active {
+  top: 2px;
+}
+
+/* Button 6c */
+
+.btn-6a {
+  border: 2px solid #22C9DB;
+}
+
+.btn-6a:hover {
+  background: transparent;
+  color: #22C9DB;
+}
+
+
+
+// ============
+// ============
+// ============
+
+
+
+// ICONOS ================================
+
+.icono_home {
+  font-size: 60px;
+  border-radius: 100px;
+  // position: relative;
+  // color: ewhit;
+  // background-color: gray;
+  // border-radius: 200px;
+  // width: 200px;
+  // height: 200px;
+  // text-align: center;
+}
+
+.circulo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  padding-top: 50px;
+  margin-left: 20%;
+  color: white;
+  background-color: #22C9DB;
+  text-align: center;
+}
+

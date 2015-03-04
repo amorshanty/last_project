@@ -1,72 +1,52 @@
 
+<div class="blue-container">
+  <div class="container">
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4 text-center profile_image_div">
-      
-    <%= image_tag(@user.photo.url(:medium), class: "img-circle img_user") %>
-    
+    <div class="row user_row">
+      <div class="col-sm-4 col-sm-offset-4 text-center profile_image_div">
+        <% if @user.photo.url != "/photos/original/missing.png" %>
+          <a class="img_user">
+            <%= image_tag(@user.photo.url(:medium), class: "img-circle img_user") %>
+          </a>
+        <% else %>
+          <a class="profile-pic">
+            <%= image_tag("user_photo_profile.jpg", class: "img-circle img_user" )%>
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row title_row">
+      <div class="col-sm-4 col-sm-offset-4 text-center">
+        <h1>Hello <%= @user.name %>!</h1>
+        <h4>Welcome to your profile page :)</h4>
+      </div>
+      <div class="row col-sm-4 col-sm-offset-4 text-center">
+        <%= link_to "Edit", edit_user_path, class: "btn_3 btn-6-2 btn-6a-2" %>
+      </div>
     </div>
   </div>
-
-  <div class="row title_row">
-    <div class="col-sm-4 col-sm-offset-4 text-center">
-
-    <h1>Hello<%= @user.name %>!</h1>
-    <h4>Welcome to your profile page :)</h4>
-    </div>
-  </div>
-
-
-<%= link_to "Edit", edit_user_path, class: "btn btn-primary btn-lg" %>
-
-
-   <!--  <a class="btn btn-primary btn-lg" href="#" role="button">Your tips</a> -->
-
 </div>
-  
+
  
+<row class="user_tips">
+  <div class="text-center">
+    <h3>Your Tips</h3> <br><br>
+  </div>
+</row>
 
-
-<div class="row user_tips_">
-  <div class="container text-center">
-      <h3>Yours Tips</h3>
 <div class="row">
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Categoria1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
+  <div class="container col-sm-6 col-sm-offset-3">
+    <% @user.tips.each do |tip| %>
+    <strong>  <%= @user.name %> </strong>
+      <p> <%= tip.description %> </p>
+      <label for="exampleInputEmail1">Rating  <% tip.average_rating.to_f.round(0).times do %>
+          <span class="star glyphicon glyphicon-star blue"> </span>
+        <% end -%> 
+      </label>
+      <hr>
+    <% end -%>
   </div>
-
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Categoria2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Categoria3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 
-    </div>
-  </div>

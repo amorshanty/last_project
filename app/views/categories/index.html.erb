@@ -1,12 +1,23 @@
 
-<div class="container">
+	
+<div class="container category_container">
+	<div class="cat_top">
+		<% @categories.each do |category| %>
+			<div class="item item-type-move">
+				<a class="item-hover" href="<%= category_path(category.id) %>">
+					<div class="item-info">
+						<div class="headline">
+							<%=  category.name %>
+							<!-- <div class="line"></div> -->
+						</div>
 
-	<div class="row">
-		<div class="col-sm-8 text-center col-sm-offset-2">
-			<% @categories.each do |category| %>
-				<%= link_to category.name, category_path(category), class: "btn btn-primary btn_li" %>
-				
-				<%end%>
-		</div>
+					<!-- 	<div class="date"> <br> <%=  category.summary %> </div>	 -->	
+
+					</div>
+					<div class="mask"></div>
+				</a>
+				<div class="item-img"><%= image_tag(category.image_url) %></div>
+			</div>	
+		<%end%>	
 	</div>
 </div>

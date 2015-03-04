@@ -1,10 +1,9 @@
 class RatingsController < ApplicationController
-
+	before_action :load_footer
+ 
 	def new
-		@rating = Rating.new		
+		@rating = Rating.new	
 	end
-
-
 
 	def create
 		tip = Tip.find(params[:tip_id])
@@ -22,10 +21,14 @@ class RatingsController < ApplicationController
 
 	def update
 		@rating = Rating.find(params[:id])
-		@tip_rating = current_user.rating.find_by_tip_id(@tip.id)
 	end
 
+
 	private
+
+		def load_footer
+			@categories = Category.all
+		end
 
 		def rating_params
 			params.require(:rating).permit(:value, :user_id)

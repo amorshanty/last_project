@@ -1,5 +1,6 @@
 class TipsController < ApplicationController
-	
+	before_action :load_footer
+ 
 	def new
 	
 	end
@@ -22,10 +23,19 @@ class TipsController < ApplicationController
 
 	def show
 		@tip = Tip.find(params[:id])
+		@tips = Tip.order("description").page(params[:page]).per(5)
 	end
 
 	def tip_params
 		params.require(:tip).permit(:description, :user_id)		
 	end
 
+
+
+
+
+	private
+		def load_footer
+			@categories = Category.all
+		end	
 end

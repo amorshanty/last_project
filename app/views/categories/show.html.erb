@@ -1,43 +1,71 @@
-<div class="category_style text-center">
-	<div class="container">
-			<div class="row id_name">
-				<h1> <%= @category.name %> </h1>
-			</div>
-	</div>
-</div>
+<style>
+  section.module2.parallax-4{ 
+  	background-image: url(<%= @category.image_url %>);
+  }
+</style>
 
-<hr>
+<section class="module content">
+	<section class="module2 parallax2 parallax-4">
+	  <!-- <div class="container_2"> -->
+	    <h1>
+	   <!--  <%= @category.name %> -->
+	    <%=  @category.summary %>
+	    </h1>   
 
-<div class="container">
-	<div class="row">
-		<%= render "tips/form" %>
-	</div>
+	 <!--  </div> -->
+	</section>
+</section>
+
+
+<div class="container col-sm-8 col-sm-offset-2">	
 	
-	<hr>
-	
+
 	<div class="row">
-		<div class="col-sm-6">
-			<% @category.tips.each do |tip| %>		
-				<div class="col-sm-3">
-					<p>
-						<%= tip.description %>
-					</p>
+			
+			
+			<% @category.tips.each do |tip| %>
+
+				<div class="col-sm-2 col-md-offset-1">
+								
+					<%= image_tag(tip.user.photo.url(:medium), class: "img-circle tiny_img_user") %>
+					
+				</div>	
+				<div class="col-sm-6">
+					<strong>	<%= tip.user.name %> </strong>
+					<p>	<%= tip.description %> </p>
+				</div>	
+				<div class="col-sm-3 text-center">	
+					<label for="exampleInputEmail1">Rating</label>
+					<h5> 
+						<% tip.average_rating.to_f.round(0).times do %>
+							<span class="star glyphicon glyphicon-star"> </span>
+						<% end -%> 
+					</h5>
 				</div>
 
-				<div class="col-sm-2">
-		      <%= form_for [@category, tip, tip.ratings.new] do |f| %>
-		        <%= f.select(:value, [1,2,3,4,5]) %>
-		        <%= f.hidden_field(:user_id, value: current_user.id) %>
-		        <%= f.submit "RATE IT!!" %>
-		      <% end -%>
-				<h1>
-					<%= @tip_rating %>
-				</h1>
-				</div>
+				<div class="row">
+					<% if current_user %>
+						<div class="col-md-6 col-md-offset-3">
+				      <%= form_for [@category, tip, tip.ratings.new] do |f| %>
+				        <%= f.select(:value, [1,2,3,4,5]) %>
 
+				    
+
+				        <%= f.hidden_field(:user_id, value: current_user.id) %>
+				        <%= f.submit "RATE IT!!", class: "btn_rate btn-6_rate btn-6a_rate" %>
+
+
+
+				      <% end %>
+						</div>
+		      <% end %>
+				</div>
+				<hr>
 			<% end %>
-		</div>
 	</div>
+</div>
+
+	<%= render "tips/form" %>
+<!-- 	<div class="clearfix"></div> -->
 
 	
-</div>

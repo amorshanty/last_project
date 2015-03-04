@@ -3,13 +3,13 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 var login_ready = function() {
-	$("#my_modal").hide();
+	// $("#my_modal").hide();
 
-	$("#myLogin").on("click", function(event){
-		event.preventDefault();
-		console.log("shit is clicked");
-		$("#my_modal").show();
-	});
+	// $("#myLogin").on("click", function(event){
+	// 	event.preventDefault();
+	// 	$("#my_modal").addAttr()
+	// 	$("#my_modal").show();
+	// });
 
 	$("#close").on("click", function(event){
 		$("#my_modal").hide();

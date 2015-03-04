@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
   <title>NowWhat</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,65 +9,89 @@
 </head>
 
 <!-- HEADER  -->
+
+
 	<body>
-		<header class="header">
-			<div class="container">
 
-				<div class="cat">
-					<div class="row">
-						<div class="col-sm-8">
-							<h1 class= "titulo">N.W?</h1>		
-							<%= link_to "Home", root_path, class: "btn bt-link b_header" %>
-						</div>		
+	<header class="header cat">
+		<nav class="navbar navbar-default">
+			<div class="container container-fluid">
 
-						<!-- BOTONERA -->
-
-						<div class="col-sm-4 botonera">
-							<%= link_to "Home", root_path, class: "btn bt-link b_header" %>
-							<button type="button" class="btn btn-link b_header">About</button>
-							<%= link_to "Categories", categories_path, class: "btn bt-link b_header" %>
-
-							<%if current_user%>
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							  <%= current_user.name %> <span class="caret"></span>
-							  </button>
-							  <ul class="dropdown-menu" role="menu">
-							    <li> <%= link_to( current_user.name, user_path(current_user.id))%> </li>
-
-							    <li class="divider"> </li>
-							    <li> <a href="#"> <%= render "users/logout_form" %> </a> </li>
-							  </ul>
-						</div>
-						 
-						 <%else%>
-								<button type="button" class="btn btn-success b_login" id="myLogin" >login</button>
-						 <% end -%>
-
-						 <!-- //BOTONERA -->
-						
-						</div>
-						</div>	
-					</div>
+				<div class="navbar-header">
+					<%= link_to image_tag('now_what.png', class: 'logo_class'), root_path %>
 				</div>
-		</header>
-	<!-- HEADER -->
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+				<ul class="nav navbar-nav navbar-right cl-effect-3">
+				<li><%= link_to "Home", root_path, class: "btn bt-link b_header" %></li>
+				<li><%= link_to "Categories", categories_path, class: "btn bt-link b_header" %></li>
+				
+				<%if current_user%>
+				  <li class="dropdown">
+				    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
+				    <ul class="dropdown-menu" role="menu">
+				      <li><%= link_to( current_user.name, user_path(current_user.id))%></li>
+				      <li class="divider"></li>
+				      <li><%= link_to 'Logout', logout_path,  method: :delete %></li>
+				    </ul>
+				<%else%>
+
+					<li><a href="#" class="btn b_login" id="myLogin" data-toggle="modal" data-target="#my_modal">Login</a></li>
+
+				<% end -%>
+
+				  </li>
+				</ul>
+					
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+
 
 		  
 
 
 	<%= yield %>
 
+	<div class="modal fade" id="my_modal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+	  <div class="modal-dialog text-center">
+	    <div class="modal-content ">
+	      <div class="modal-header">
+	        <h4 class="modal-title">Hi! welcome back :) </h4>
+	      </div>
+	      <div class="modal-body"> 
+	        <%= render "users/login_form" %> 
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+		
+<!-- //MODAL  -->
+	
+
 	<!-- //FOOTER  -->	
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<h6>footer</h6>
+
+
+	<div class="clearfix"></div>
+		<footer class="footer">
+			<div class="container col-sm-10 col-sm-offset-1 text-center">
+				<div class="row">
+
+					<ul class="list-inline">
+					<% @categories.each do |category| %>
+						<li><%= link_to category.name, category_path(category.id), class: "footer_color" %></li>
+					  <%end%>	
+					</ul>
+					
+
 				</div>
 			</div>
-		</div>
-	</footer>
-	</div>
-	<!-- //FOOTER -->
+		</footer>
+<!-- 	</div>
+ -->	<!-- //FOOTER -->
 	</body>
 </html>
