@@ -17,7 +17,6 @@
 /tmp
 
 public/system
-
 *.rbc
 capybara-*.html
 .rspec
