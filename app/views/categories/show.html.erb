@@ -26,8 +26,15 @@
 			<% @category.tips.each do |tip| %>
 
 				<div class="col-sm-2 col-md-offset-1">
-								
-					<%= image_tag(tip.user.photo.url(:medium), class: "img-circle tiny_img_user") %>
+					<% if @user.photo.url != "/photos/original/missing.png" %>
+						<a class="img_user">
+							<%= image_tag(tip.user.photo.url(:medium), class: "img-circle tiny_img_user") %>
+          	</a>
+        	<% else %>
+          	<a class="profile-pic">
+            	<%= image_tag("https://dl.dropboxusercontent.com/u/80732213/user_photo_profile.jpg", class: "img-circle tiny_img_user" )%>
+          </a>
+
 					
 				</div>	
 				<div class="col-sm-6">
